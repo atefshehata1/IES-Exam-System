@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--theme-primary);
+    color: var(--theme-textPrimary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Navbar height compensation utility */
+  .navbar-offset {
+    @apply pt-20;
+  }
+
+  /* Theme-aware utilities */
+  .theme-bg-primary {
+    background-color: var(--theme-primary);
+  }
+
+  .theme-bg-secondary {
+    background-color: var(--theme-secondary);
+  }
+
+  .theme-bg-tertiary {
+    background-color: var(--theme-tertiary);
+  }
+
+  .theme-bg-surface {
+    background-color: var(--theme-surface);
+  }
+
+  .theme-bg-card {
+    background-color: var(--theme-cardBackground);
+    border-color: var(--theme-cardBorder);
+  }
+
+  .theme-text-primary {
+    color: var(--theme-textPrimary);
+  }
+
+  .theme-text-secondary {
+    color: var(--theme-textSecondary);
+  }
+
+  .theme-text-tertiary {
+    color: var(--theme-textTertiary);
+  }
+
+  .theme-text-accent {
+    color: var(--theme-textAccent);
+  }
+
+  .theme-border {
+    border-color: var(--theme-border);
+  }
+
+  .theme-border-light {
+    border-color: var(--theme-borderLight);
+  }
+
+  .theme-gradient-primary {
+    background: var(--theme-gradientPrimary);
+  }
+
+  .theme-gradient-secondary {
+    background: var(--theme-gradientSecondary);
+  }
+
+  .theme-gradient-accent {
+    background: var(--theme-gradientAccent);
+  }
+
+  .theme-shadow {
+    box-shadow: 0 4px 6px -1px var(--theme-shadow),
+      0 2px 4px -1px var(--theme-shadow);
+  }
+
+  .theme-shadow-lg {
+    box-shadow: 0 10px 15px -3px var(--theme-shadow),
+      0 4px 6px -2px var(--theme-shadow);
+  }
+
+  .theme-shadow-xl {
+    box-shadow: 0 20px 25px -5px var(--theme-shadow),
+      0 10px 10px -5px var(--theme-shadow);
+  }
+
+  /* Brand color utilities */
+  .theme-brand-primary {
+    color: var(--theme-brandPrimary);
+  }
+
+  .theme-bg-brand-primary {
+    background-color: var(--theme-brandPrimary);
+  }
+
+  .theme-brand-secondary {
+    color: var(--theme-brandSecondary);
+  }
+
+  .theme-bg-brand-secondary {
+    background-color: var(--theme-brandSecondary);
+  }
+
+  .theme-brand-tertiary {
+    color: var(--theme-brandTertiary);
+  }
+
+  .theme-bg-brand-tertiary {
+    background-color: var(--theme-brandTertiary);
+  }
+
+  /* Status color utilities */
+  .theme-success {
+    color: var(--theme-success);
+  }
+
+  .theme-bg-success {
+    background-color: var(--theme-success);
+  }
+
+  .theme-warning {
+    color: var(--theme-warning);
+  }
+
+  .theme-bg-warning {
+    background-color: var(--theme-warning);
+  }
+
+  .theme-error {
+    color: var(--theme-error);
+  }
+
+  .theme-bg-error {
+    background-color: var(--theme-error);
+  }
+
+  .theme-info {
+    color: var(--theme-info);
+  }
+
+  .theme-bg-info {
+    background-color: var(--theme-info);
+  }
+
+  /* Theme-specific overrides */
+  .theme-pure-black .animate-pulse {
+    animation: pulse-neon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-neon {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 5px var(--theme-brandPrimary);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 20px var(--theme-brandPrimary),
+        0 0 30px var(--theme-brandPrimary);
+    }
+  }
+
+  /* Responsive backdrop blur for theme cards */
+  .theme-backdrop {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Theme transitions */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease;
+  }
+}

@@ -1,0 +1,10 @@
+*.env
+*.pdf
+*.png
+*.jpg
+*.rar
+*.zip
+*.ipynb
+exams
+uploads
+node_modules/
